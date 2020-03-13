@@ -47,8 +47,11 @@ function onMessage(e) {
         })
         var img = new Image();
         img.src = URL.createObjectURL(imgFile);
-        document.body.appendChild(img);
-
+        img.id = 'image';
+        //document.body.appendChild(img);
+        document.getElementById('img').appendChild(img);
+        document.getElementById('image').width = '500';
+        
         /* const gofileForm = new FormData();
         gofileForm.append('filesUploaded', imgFile);
         //gofileForm.append('email', 'hidonbrush@gmail.com');
