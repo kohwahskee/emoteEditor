@@ -1,5 +1,13 @@
+
 var cnt = 0, wnd = document.getElementById("photopea").contentWindow;
 const urlParams = new URLSearchParams(window.location.search);
+const signLink = document.getElementById('sign') ;
+const signALink=document.getElementById('signA');
+const lurkLink=document.getElementById('lurk');
+const comicLink=document.getElementById('comic');
+const comiciLink=document.getElementById('comici');
+
+
 
 const emote = urlParams.get('e');
 
@@ -18,13 +26,13 @@ else if (emote === 'signA'){
 
 function lurkEmote(e) {
   cnt++;
-  console.log(cnt);
-
+  
 
   if (cnt == 1) { }
   if (cnt == 2) {
-    var loadFont1 = 'app.open("https://srv-file4.gofile.io/download/LTY0di/comici.ttf")'
-    var loadImage = 'app.open("https://srv-file7.gofile.io/download/CQpdXx/lurk.psd", false)';
+    console.log(cnt);
+    var loadFont1 = `app.open("${comiciLink}")`;
+    var loadImage = `app.open("${lurkLink}", false)`;
     wnd.postMessage(loadFont1, '*');
     wnd.postMessage(loadImage, "*");
   }
@@ -53,6 +61,7 @@ function lurkEmote(e) {
         var img = new Image();
         img.src = URL.createObjectURL(imgFile);
         img.id = 'image';
+        img.name = 'sdlkj'
         //document.body.appendChild(img);
         document.getElementById('loading').remove();
         document.getElementById('imgContainer').appendChild(img);
@@ -73,8 +82,8 @@ function signEmote(e) {
 
   if (cnt == 1) { }
   if (cnt == 2) {
-    var loadFont1 = 'app.open("https://srv-file4.gofile.io/download/LTY0di/comic.ttf")'
-    var loadImage = 'app.open("https://srv-file11.gofile.io/download/fvTHVW/PeepoSign.psd", false)';
+    var loadFont1 = `app.open("${comicLink}")`
+    var loadImage = `app.open("${signLink}", false)`;
     wnd.postMessage(loadFont1, '*');
     wnd.postMessage(loadImage, "*");
   }
@@ -121,8 +130,8 @@ function signAEmote(e) {
 
   if (cnt == 1) { }
   if (cnt == 2) {
-    var loadFont1 = 'app.open("https://srv-file4.gofile.io/download/LTY0di/comic.ttf")'
-    var loadImage = 'app.open("https://srv-file11.gofile.io/download/YbY651/peepoSignAnimated.psd", false)';
+    var loadFont1 = `app.open("${comicLink}")`
+    var loadImage = `app.open("${signALink}", false)`;
     wnd.postMessage(loadFont1, '*');
     wnd.postMessage(loadImage, "*");
   }
