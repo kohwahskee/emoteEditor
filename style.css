@@ -1,9 +1,24 @@
-div{
+#img{
   text-align: center;
-  margin: auto auto auto auto;
-  padding-top: 30px;
+  height: 80vh;
+  margin: 0 0 0 0 ;
+  padding: auto;
+
   
+}
+#imgContainer{
+  text-align: center;
+  height: 90%;
+  padding: 4rem;
+
 }
 body{
   background-color: #2C2F33;
+}
+
+#loading{
+  color: white;
+  font-family: Calibri;
+  font-size: xx-large;
+  text-align: center;
 }
