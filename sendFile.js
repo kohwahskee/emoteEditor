@@ -193,7 +193,7 @@ function clapEmote(e) {
     console.log('printed');
     var emoteName = urlParams.get('name');
     console.log(emoteName);
-    var changeName = `var reText = '${emoteName}';var tLength = reText.length;var group1 = app.activeDocument.layerSets.getByName('_a_p1,150');var group2 = app.activeDocument.layerSets.getByName('_a_p2,150');var layer1 = group1.layers.getByName('TEXT_HERE');var layer2 = group2.layers.getByName('TEXT_HERE');if (tLength <= 4) {layer1.textItem.contents = reText;layer1.textItem.size = 31;layer2.textItem.contents = reText;layer2.textItem.size = 31;}else {layer1.textItem.contents = reText;layer1.textItem.size = 15;layer2.textItem.contents = reText;layer2.textItem.size = 15;}`;
+    var changeName = `var reText = '${emoteName}';var tLength = reText.length;var group1 = app.activeDocument.layerSets.getByName('_a_p1,150');var group2 = app.activeDocument.layerSets.getByName('_a_p2,150');var layer1 = group1.layers.getByName('TEXT_HERE');var layer2 = group2.layers.getByName('TEXT_HERE');if (tLength <= 5) {layer1.textItem.contents = reText;layer1.textItem.size = 31;layer2.textItem.contents = reText;layer2.textItem.size = 31;}else if (tLength <= 7) {layer1.textItem.contents = reText;layer1.textItem.size = 22;layer2.textItem.contents = reText;layer2.textItem.size = 22;}else{layer1.textItem.contents = reText;layer1.textItem.size = 17;layer2.textItem.contents = reText;layer2.textItem.size = 17;}`;
     wnd.postMessage(changeName, "*");
 
   }
