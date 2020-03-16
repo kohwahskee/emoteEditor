@@ -1,13 +1,21 @@
 var cnt = 0, wnd = document.getElementById("photopea").contentWindow;
 const urlParams = new URLSearchParams(window.location.search);
-const signLink = document.getElementById('sign');
+/* const signLink = document.getElementById('sign');
 const signALink = document.getElementById('signA');
 const lurkLink = document.getElementById('lurk');
 const clapSign = document.getElementById('clap');
 const comicLink = document.getElementById('comic');
 const comiciLink = document.getElementById('comici');
-const comicbLink = document.getElementById('comicb');
+const comicbLink = document.getElementById('comicb'); */
 
+
+const signLink = 'https://kohwahskee.github.io/emoteEditor/assets/PeepoSign.psd'
+const signALink = 'https://kohwahskee.github.io/emoteEditor/assets/peepoSignAnimated.psd';
+const lurkLink = 'https://kohwahskee.github.io/emoteEditor/assets/lurk.psd';
+const clapSign = 'https://kohwahskee.github.io/emoteEditor/assets/clapSign.psd';
+const comicLink = 'https://kohwahskee.github.io/emoteEditor/assets/comic.ttf';
+const comiciLink = 'https://kohwahskee.github.io/emoteEditor/assets/comici.ttf';
+const comicbLink = 'https://kohwahskee.github.io/emoteEditor/assets/comicbd.ttf';
 
 
 const emote = urlParams.get('e');

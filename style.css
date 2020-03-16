@@ -1,6 +1,19 @@
 body{
   background-color: #2C2F33;
 }
+
+@media only screen and (max-width: 800px){
+  #photopea{
+    opacity: 0;
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 800px){
+  #photopea{
+    display: none;
+  }
+}
 #loadText{
   text-align: center;
   border-width: 5px;
