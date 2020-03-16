@@ -1,4 +1,3 @@
-
 var cnt = 0, wnd = document.getElementById("photopea").contentWindow;
 const urlParams = new URLSearchParams(window.location.search);
 const signLink = document.getElementById('sign');
@@ -65,11 +64,16 @@ function lurkEmote(e) {
         var img = new Image();
         img.src = URL.createObjectURL(imgFile);
         img.id = 'image';
-        img.name = 'sdlkj'
-        //document.body.appendChild(img);
+        
         document.getElementById('loading').remove();
-        document.getElementById('imgContainer').appendChild(img);
+
+        var aLink = document.getElementById('imgLink');
+        aLink.insertBefore(img,document.getElementById('download'));
         document.getElementById('image').width = '250';
+        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+
+        var eName = urlParams.get('name').substring(0,1).toUpperCase() + urlParams.get('name').substring(1);
+        aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
 
 
       }
@@ -117,10 +121,16 @@ function signEmote(e) {
         var img = new Image();
         img.src = URL.createObjectURL(imgFile);
         img.id = 'image';
-        //document.body.appendChild(img);
+        
         document.getElementById('loading').remove();
-        document.getElementById('imgContainer').appendChild(img);
+
+        var aLink = document.getElementById('imgLink');
+        aLink.insertBefore(img,document.getElementById('download'));
         document.getElementById('image').width = '250';
+        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+
+        var eName = urlParams.get('name').substring(0,1).toUpperCase() + urlParams.get('name').substring(1);
+        aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
       }
 
     })
@@ -167,10 +177,16 @@ function signAEmote(e) {
         var img = new Image();
         img.src = URL.createObjectURL(imgFile);
         img.id = 'image';
-        //document.body.appendChild(img);
+        
         document.getElementById('loading').remove();
-        document.getElementById('imgContainer').appendChild(img);
+
+        var aLink = document.getElementById('imgLink');
+        aLink.insertBefore(img,document.getElementById('download'));
         document.getElementById('image').width = '250';
+        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+
+        var eName = urlParams.get('name').substring(0,1).toUpperCase() + urlParams.get('name').substring(1);
+        aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
       }
 
     })
@@ -215,10 +231,16 @@ function clapEmote(e) {
         var img = new Image();
         img.src = URL.createObjectURL(imgFile);
         img.id = 'image';
-        //document.body.appendChild(img);
+        
         document.getElementById('loading').remove();
-        document.getElementById('imgContainer').appendChild(img);
+
+        var aLink = document.getElementById('imgLink');
+        aLink.insertBefore(img,document.getElementById('download'));
         document.getElementById('image').width = '250';
+        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+
+        var eName = urlParams.get('name').substring(0,1).toUpperCase() + urlParams.get('name').substring(1);
+        aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
       }
 
     })

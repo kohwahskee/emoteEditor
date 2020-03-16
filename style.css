@@ -1,24 +1,79 @@
-#img{
-  text-align: center;
-  height: 80vh;
-  margin: 0 0 0 0 ;
-  padding: auto;
-
-  
-}
-#imgContainer{
-  text-align: center;
-  height: 90%;
-  padding: 4rem;
-
-}
 body{
   background-color: #2C2F33;
 }
+#loadText{
+  text-align: center;
+  border-width: 5px;
+  border-style: solid;
+}
+#img{
+  height: 80vh;
+  margin: 0 0 0 0 ;
+  padding: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  
+}
+
+a:link{
+  text-decoration: none;
+  color: #53f4ff;
+}
+#download{
+  font-family: 'Calibri', sans-serif;
+  opacity: 0;
+}
+a:hover #image{
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-bottom: 10px;
+  border-color: #53f4ff;
+  animation: scaleUp .2s ease forwards;
+}
+a:hover #download {
+  animation: moveDown .2s ease forwards;
+}
+
+@keyframes scaleUp{
+  from{
+    
+    transform: scaleX(0%);
+    border-width: 0px;
+  }
+  to {
+    transform: scaleX(100%);
+    border-width: 7px;
+  }
+}
+#imgContainer{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
 
 #loading{
   color: white;
-  font-family: Calibri;
+  font-family: 'Calibri';
   font-size: xx-large;
   text-align: center;
+  
+  
 }
+
+@keyframes moveDown {
+  from{
+    transform: translateY(+10px);
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
