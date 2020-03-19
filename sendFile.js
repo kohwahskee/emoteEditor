@@ -9,6 +9,7 @@ const comiciLink = document.getElementById('comici');
 const comicbLink = document.getElementById('comicb'); */
 
 
+const hazmatLink = 'https://kohwahskee.github.io/emoteEditor/assets/pepeHazmat.psd'
 const signLink = 'https://kohwahskee.github.io/emoteEditor/assets/PeepoSign.psd'
 const signALink = 'https://kohwahskee.github.io/emoteEditor/assets/peepoSignAnimated.psd';
 const lurkLink = 'https://kohwahskee.github.io/emoteEditor/assets/lurk.psd';
@@ -16,6 +17,7 @@ const clapSign = 'https://kohwahskee.github.io/emoteEditor/assets/clapSign.psd';
 const comicLink = 'https://kohwahskee.github.io/emoteEditor/assets/comic.ttf';
 const comiciLink = 'https://kohwahskee.github.io/emoteEditor/assets/comici.ttf';
 const comicbLink = 'https://kohwahskee.github.io/emoteEditor/assets/comicbd.ttf';
+
 
 
 const emote = urlParams.get('e');
@@ -31,6 +33,9 @@ else if (emote === 'signA') {
 }
 else if (emote === 'clap') {
   window.addEventListener("message", clapEmote);
+}
+else if (emote == 'hazmat') {
+  window.addEventListener("message", hazmatEmote);
 }
 
 
@@ -69,11 +74,12 @@ function lurkEmote(e) {
         let imgFile = new File([imgBlob], 'emote.png', {
           type: 'image/png'
         })
-        var img = new Image();
+        var img = document.getElementById('image');
         img.src = URL.createObjectURL(imgFile);
-        img.id = 'image';
+        document.getElementById('download').innerText = 'DOWNLOAD';
         
-        document.getElementById('loading').remove();
+        img.setAttribute('class', 'afterLoaded')
+        document.getElementById('download').setAttribute('style', 'color: #53f4ff');
 
         var aLink = document.getElementById('imgLink');
         aLink.insertBefore(img,document.getElementById('download'));
@@ -126,11 +132,14 @@ function signEmote(e) {
         let imgFile = new File([imgBlob], 'emote.png', {
           type: 'image/png'
         })
-        var img = new Image();
+        var img = document.getElementById('image');
         img.src = URL.createObjectURL(imgFile);
-        img.id = 'image';
+        document.getElementById('download').innerText = 'DOWNLOAD';
         
-        document.getElementById('loading').remove();
+        img.setAttribute('class', 'afterLoaded')
+        document.getElementById('download').setAttribute('style', 'color: #53f4ff');
+        
+  
 
         var aLink = document.getElementById('imgLink');
         aLink.insertBefore(img,document.getElementById('download'));
@@ -182,11 +191,14 @@ function signAEmote(e) {
         let imgFile = new File([imgBlob], 'emote.gif', {
           type: 'image/gif'
         })
-        var img = new Image();
+        var img = document.getElementById('image');
         img.src = URL.createObjectURL(imgFile);
-        img.id = 'image';
+        document.getElementById('download').innerText = 'DOWNLOAD';
         
-        document.getElementById('loading').remove();
+        img.setAttribute('class', 'afterLoaded')
+        document.getElementById('download').setAttribute('style', 'color: #53f4ff');
+        
+  
 
         var aLink = document.getElementById('imgLink');
         aLink.insertBefore(img,document.getElementById('download'));
@@ -236,11 +248,14 @@ function clapEmote(e) {
         let imgFile = new File([imgBlob], 'emote.gif', {
           type: 'image/gif'
         })
-        var img = new Image();
+        var img = document.getElementById('image');
         img.src = URL.createObjectURL(imgFile);
-        img.id = 'image';
+        document.getElementById('download').innerText = 'DOWNLOAD';
         
-        document.getElementById('loading').remove();
+        img.setAttribute('class', 'afterLoaded')
+        document.getElementById('download').setAttribute('style', 'color: #53f4ff');
+        
+  
 
         var aLink = document.getElementById('imgLink');
         aLink.insertBefore(img,document.getElementById('download'));
@@ -249,6 +264,61 @@ function clapEmote(e) {
 
         var eName = urlParams.get('name').substring(0,1).toUpperCase() + urlParams.get('name').substring(1);
         aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
+      }
+
+    })
+  }
+}
+function hazmatEmote(e) {
+  cnt++;
+  console.log(cnt);
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (cnt == 1) { }
+  if (cnt == 2) {
+    var emoteName = urlParams.get('name');
+    var loadImage = `app.open("${hazmatLink}", false)`;
+    var loadEmote = `var emoteID = '${emoteName}';app.open('https://cdn.discordapp.com/emojis/' + emoteID);`
+    wnd.postMessage(loadImage, "*");
+    wnd.postMessage(loadEmote, "*");
+  }
+  if (cnt == 6) {
+    console.log('printed');
+    var emoteName = urlParams.get('name');
+    console.log(emoteName);
+    var changeName = `var emoteID = '${emoteName}';app.activeDocument.resizeImage(112,112);var targetDoc = app.documents.getByName('pepeHazmat.psd');if (app.activeDocument.layerSets[0] != undefined){var target = app.activeDocument.layerSets.getByName(emoteID);target.duplicate(targetDoc);app.activeDocument = app.documents.getByName('pepeHazmat.psd');app.activeDocument.layerSets.getByName(emoteID + ' copy').resize(90,90,AnchorPosition.TOPRIGHT);var target = app.activeDocument.layerSets.getByName(emoteID + ' copy');var group =  app.activeDocument.layerSets.getByName('PLACE');target.move(group);}else{var target = app.activeDocument.layers.getByName('Background');target.duplicate(targetDoc);app.activeDocument = app.documents.getByName('pepeHazmat.psd');app.activeDocument.layers.getByName('Layer 1').resize(90,90,AnchorPosition.TOPRIGHT);var target = app.activeDocument.layers.getByName('Layer 1');var group =  app.activeDocument.layerSets.getByName('PLACE');target.move(group);}`;
+    wnd.postMessage(changeName, "*");
+
+  }
+  if (cnt == 7) {
+    var save = `app.activeDocument.saveToOE("gif")`;
+    wnd.postMessage(save, "*");
+    window.addEventListener('message', event => {
+      let aBuffer = event.data;
+      if (event.data !== 'done') {
+        // ArrayBuffer -> Blob
+        let imgBlob = new Blob([aBuffer], {
+          type: 'image/png'
+        });
+        imgBlob.name = 'emote.gif';
+        // Blob -> Image File
+        let imgFile = new File([imgBlob], 'emote.gif', {
+          type: 'image/gif'
+        })
+        var img = document.getElementById('image');
+        img.src = URL.createObjectURL(imgFile);
+        document.getElementById('download').innerText = 'DOWNLOAD';
+        
+        img.setAttribute('class', 'afterLoaded')
+        document.getElementById('download').setAttribute('style', 'color: #53f4ff');
+        
+  
+
+        var aLink = document.getElementById('imgLink');
+        aLink.insertBefore(img,document.getElementById('download'));
+        document.getElementById('image').width = '250';
+        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+        aLink.setAttribute('download', `${urlParams.get('e')}`);
       }
 
     })

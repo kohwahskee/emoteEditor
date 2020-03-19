@@ -31,13 +31,32 @@ body{
 
 a:link{
   text-decoration: none;
-  color: #53f4ff;
+  color: #eaff4f;
 }
 #download{
   font-family: 'Calibri', sans-serif;
   opacity: 0;
 }
-a:hover #image{
+/* a:hover #image{
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-bottom: 10px;
+  border-color: #53f4ff;
+  animation: scaleUp .2s ease forwards;
+} */
+.beforeLoaded:hover{
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-bottom: 10px;
+  border-color: #eaff4f;
+  animation: scaleUp .2s ease forwards;
+}
+
+.afterLoaded:hover{
   border-style: solid;
   border-top: none;
   border-left: none;
@@ -69,15 +88,6 @@ a:hover #download {
 
 }
 
-
-#loading{
-  color: white;
-  font-family: 'Calibri';
-  font-size: xx-large;
-  text-align: center;
-  
-  
-}
 
 @keyframes moveDown {
   from{
