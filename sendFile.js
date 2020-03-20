@@ -291,10 +291,11 @@ function hazmatEmote(e) {
 
   }
   if (cnt == 7) {
-    var save = `app.activeDocument.saveToOE("gif")`;
+    var save = `if (app.activeDocument.layerSets.getByName('PLACE').layers.getByName('Layer 1')){app.activeDocument.saveToOE("png");}else{app.activeDocument.saveToOE("gif");}`;
     wnd.postMessage(save, "*");
     window.addEventListener('message', event => {
       let aBuffer = event.data;
+      console.log(aBuffer);
       if (event.data !== 'done') {
         // ArrayBuffer -> Blob
         let imgBlob = new Blob([aBuffer], {

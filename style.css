@@ -11,7 +11,8 @@ body{
 
 @media only screen and (min-width: 800px){
   #photopea{
-    display: none;
+    opacity: 1;
+    display: block;
   }
 }
 #loadText{
