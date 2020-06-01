@@ -8,7 +8,7 @@ const comicLink = document.getElementById('comic');
 const comiciLink = document.getElementById('comici');
 const comicbLink = document.getElementById('comicb'); */
 
-
+const PETlink = 'https://kohwahskee.github.io/emoteEditor/assets/PETTHEEMOTE.psd';
 const hazmatLink = 'https://kohwahskee.github.io/emoteEditor/assets/pepeHazmat.psd'
 const signLink = 'https://kohwahskee.github.io/emoteEditor/assets/PeepoSign.psd'
 const signALink = 'https://kohwahskee.github.io/emoteEditor/assets/peepoSignAnimated.psd';
@@ -36,6 +36,9 @@ else if (emote === 'clap') {
 }
 else if (emote == 'hazmat') {
   window.addEventListener("message", hazmatEmote);
+}
+else if (emote == 'PETTHE') {
+  window.addEventListener("message", petEmote);
 }
 
 
@@ -77,16 +80,16 @@ function lurkEmote(e) {
         var img = document.getElementById('image');
         img.src = URL.createObjectURL(imgFile);
         document.getElementById('download').innerText = 'DOWNLOAD';
-        
+
         img.setAttribute('class', 'afterLoaded')
         document.getElementById('download').setAttribute('style', 'color: #53f4ff');
 
         var aLink = document.getElementById('imgLink');
-        aLink.insertBefore(img,document.getElementById('download'));
+        aLink.insertBefore(img, document.getElementById('download'));
         document.getElementById('image').width = '250';
-        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+        aLink.setAttribute('href', URL.createObjectURL(imgFile));
 
-        var eName = urlParams.get('name').substring(0,1).toUpperCase() + urlParams.get('name').substring(1);
+        var eName = urlParams.get('name').substring(0, 1).toUpperCase() + urlParams.get('name').substring(1);
         aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
 
 
@@ -135,18 +138,18 @@ function signEmote(e) {
         var img = document.getElementById('image');
         img.src = URL.createObjectURL(imgFile);
         document.getElementById('download').innerText = 'DOWNLOAD';
-        
+
         img.setAttribute('class', 'afterLoaded')
         document.getElementById('download').setAttribute('style', 'color: #53f4ff');
-        
-  
+
+
 
         var aLink = document.getElementById('imgLink');
-        aLink.insertBefore(img,document.getElementById('download'));
+        aLink.insertBefore(img, document.getElementById('download'));
         document.getElementById('image').width = '250';
-        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+        aLink.setAttribute('href', URL.createObjectURL(imgFile));
 
-        var eName = urlParams.get('name').substring(0,1).toUpperCase() + urlParams.get('name').substring(1);
+        var eName = urlParams.get('name').substring(0, 1).toUpperCase() + urlParams.get('name').substring(1);
         aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
       }
 
@@ -194,18 +197,18 @@ function signAEmote(e) {
         var img = document.getElementById('image');
         img.src = URL.createObjectURL(imgFile);
         document.getElementById('download').innerText = 'DOWNLOAD';
-        
+
         img.setAttribute('class', 'afterLoaded')
         document.getElementById('download').setAttribute('style', 'color: #53f4ff');
-        
-  
+
+
 
         var aLink = document.getElementById('imgLink');
-        aLink.insertBefore(img,document.getElementById('download'));
+        aLink.insertBefore(img, document.getElementById('download'));
         document.getElementById('image').width = '250';
-        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+        aLink.setAttribute('href', URL.createObjectURL(imgFile));
 
-        var eName = urlParams.get('name').substring(0,1).toUpperCase() + urlParams.get('name').substring(1);
+        var eName = urlParams.get('name').substring(0, 1).toUpperCase() + urlParams.get('name').substring(1);
         aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
       }
 
@@ -251,18 +254,18 @@ function clapEmote(e) {
         var img = document.getElementById('image');
         img.src = URL.createObjectURL(imgFile);
         document.getElementById('download').innerText = 'DOWNLOAD';
-        
+
         img.setAttribute('class', 'afterLoaded')
         document.getElementById('download').setAttribute('style', 'color: #53f4ff');
-        
-  
+
+
 
         var aLink = document.getElementById('imgLink');
-        aLink.insertBefore(img,document.getElementById('download'));
+        aLink.insertBefore(img, document.getElementById('download'));
         document.getElementById('image').width = '250';
-        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+        aLink.setAttribute('href', URL.createObjectURL(imgFile));
 
-        var eName = urlParams.get('name').substring(0,1).toUpperCase() + urlParams.get('name').substring(1);
+        var eName = urlParams.get('name').substring(0, 1).toUpperCase() + urlParams.get('name').substring(1);
         aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
       }
 
@@ -309,16 +312,71 @@ function hazmatEmote(e) {
         var img = document.getElementById('image');
         img.src = URL.createObjectURL(imgFile);
         document.getElementById('download').innerText = 'DOWNLOAD';
-        
+
         img.setAttribute('class', 'afterLoaded')
         document.getElementById('download').setAttribute('style', 'color: #53f4ff');
-        
-  
+
+
 
         var aLink = document.getElementById('imgLink');
-        aLink.insertBefore(img,document.getElementById('download'));
+        aLink.insertBefore(img, document.getElementById('download'));
         document.getElementById('image').width = '250';
-        aLink.setAttribute('href',URL.createObjectURL(imgFile));
+        aLink.setAttribute('href', URL.createObjectURL(imgFile));
+        aLink.setAttribute('download', `${urlParams.get('e')}`);
+      }
+
+    })
+  }
+}
+function petEmote(e) {
+  cnt++;
+  console.log(cnt);
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (cnt == 1) { }
+  if (cnt == 2) {
+    var loadImage = `app.open("${PETlink}", false)`;
+    wnd.postMessage(loadImage, "*");
+  }
+  if (cnt == 4) {
+    var emoteName = urlParams.get('name');
+    var openSmart = `var emotePlace = app.activeDocument.layers.getByName('[Emote Here]');app.activeDocument.activeLayer = emotePlace;executeAction(stringIDToTypeID("placedLayerEditContents"));var emoteID = '${emoteName}';app.open('https://cdn.discordapp.com/emojis/' + emoteID);app.activeDocument = app.documents.getByName('${emoteName}.psd');`
+    wnd.postMessage(openSmart, "*");
+    console.log('printed');
+    var emoteName = urlParams.get('name');
+    console.log(emoteName);
+
+  }
+  if (cnt == 6) {
+    var emoteName = urlParams.get('name');
+    var save = `app.activeDocument.resizeImage(94, 94);var targetDoc = app.documents.getByName('Layer 11.psd');var target = app.activeDocument.layers[0];target.duplicate(targetDoc);app.activeDocument.close();app.activeDocument.save();app.activeDocument.close();app.activeDocument.saveToOE("gif");`;
+    wnd.postMessage(save, "*");
+    window.addEventListener('message', event => {
+      let aBuffer = event.data;
+      console.log(aBuffer);
+      if (event.data !== 'done') {
+        // ArrayBuffer -> Blob
+        let imgBlob = new Blob([aBuffer], {
+          type: 'image/png'
+        });
+        imgBlob.name = 'emote.gif';
+        // Blob -> Image File
+        let imgFile = new File([imgBlob], 'emote.gif', {
+          type: 'image/gif'
+        })
+        var img = document.getElementById('image');
+        img.src = URL.createObjectURL(imgFile);
+        document.getElementById('download').innerText = 'DOWNLOAD';
+
+        img.setAttribute('class', 'afterLoaded')
+        document.getElementById('download').setAttribute('style', 'color: #53f4ff');
+
+
+
+        var aLink = document.getElementById('imgLink');
+        aLink.insertBefore(img, document.getElementById('download'));
+        document.getElementById('image').width = '250';
+        aLink.setAttribute('href', URL.createObjectURL(imgFile));
         aLink.setAttribute('download', `${urlParams.get('e')}`);
       }
 
