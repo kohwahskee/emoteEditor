@@ -409,9 +409,11 @@ function pepegaSignEmote(e) {
   }
   if (cnt == 7){
     console.log('printed');
-    var emoteName = urlParams.get('name');
+    var emoteName = urlParams.get('name').replaceAll('"', '\\"');
+
     var changeText = `var reText = "${emoteName}"; app.activeDocument.layers[0].textItem.contents = reText; app.activeDocument.save(); app.activeDocument.close();`;
     wnd.postMessage(changeText, "*");
+    console.log(emoteName.replaceAll('"', '\"'));
   }
   if (cnt == 8) {
     var save = `app.activeDocument.saveToOE("gif")`;
