@@ -8,6 +8,7 @@ const comicLink = document.getElementById('comic');
 const comiciLink = document.getElementById('comici');
 const comicbLink = document.getElementById('comicb'); */
 
+const pepegaSignLink = 'https://kohwahskee.github.io/emoteEditor/assets/PepegaSign.psd'
 const PETlink = 'https://kohwahskee.github.io/emoteEditor/assets/PETTHEEMOTE.psd';
 const hazmatLink = 'https://kohwahskee.github.io/emoteEditor/assets/pepeHazmat.psd'
 const signLink = 'https://kohwahskee.github.io/emoteEditor/assets/PeepoSign.psd'
@@ -39,6 +40,9 @@ else if (emote == 'hazmat') {
 }
 else if (emote == 'PETTHE') {
   window.addEventListener("message", petEmote);
+}
+else if (emote == 'PepegaSign'){
+  window.addEventListener("message", pepegaSignEmote);
 }
 
 
@@ -378,6 +382,68 @@ function petEmote(e) {
         document.getElementById('image').width = '250';
         aLink.setAttribute('href', URL.createObjectURL(imgFile));
         aLink.setAttribute('download', `${urlParams.get('e')}`);
+      }
+
+    })
+  }
+}
+function pepegaSignEmote(e) {
+  cnt++;
+  console.log(cnt);
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (cnt == 1) { }
+  if (cnt == 2) {
+    var loadFont1 = `app.open("${comicLink}")`
+    var loadImage = `app.open("${pepegaSignLink}", false)`;
+    wnd.postMessage(loadFont1, '*');
+    wnd.postMessage(loadImage, "*");
+  }
+  if (cnt == 5) {
+    console.log('printed');
+    var emoteName = urlParams.get('name');
+    console.log(emoteName);
+    var openObj = `var target = app.activeDocument.layerSets[2].layers.getByName("TEXT"); app.activeDocument.activeLayer = target; executeAction(stringIDToTypeID("placedLayerEditContents"));`;
+    wnd.postMessage(openObj, "*");
+
+  }
+  if (cnt == 7){
+    console.log('printed');
+    var emoteName = urlParams.get('name');
+    var changeText = `var reText = '${emoteName}'; app.activeDocument.layers[0].textItem.contents = reText; app.activeDocument.save(); app.activeDocument.close();`;
+    wnd.postMessage(changeText, "*");
+  }
+  if (cnt == 8) {
+    var save = `app.activeDocument.saveToOE("gif")`;
+    wnd.postMessage(save, "*");
+    window.addEventListener('message', event => {
+      let aBuffer = event.data;
+      if (event.data !== 'done') {
+        // ArrayBuffer -> Blob
+        let imgBlob = new Blob([aBuffer], {
+          type: 'image/png'
+        });
+        imgBlob.name = 'emote.gif';
+        // Blob -> Image File
+        let imgFile = new File([imgBlob], 'emote.gif', {
+          type: 'image/gif'
+        })
+        var img = document.getElementById('image');
+        img.src = URL.createObjectURL(imgFile);
+        document.getElementById('download').innerText = 'DOWNLOAD';
+
+        img.setAttribute('class', 'afterLoaded')
+        document.getElementById('download').setAttribute('style', 'color: #53f4ff');
+
+
+
+        var aLink = document.getElementById('imgLink');
+        aLink.insertBefore(img, document.getElementById('download'));
+        document.getElementById('image').width = '250';
+        aLink.setAttribute('href', URL.createObjectURL(imgFile));
+
+        var eName = urlParams.get('name').substring(0, 1).toUpperCase() + urlParams.get('name').substring(1);
+        aLink.setAttribute('download', `${urlParams.get('e')}${eName}`);
       }
 
     })
