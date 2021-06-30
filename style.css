@@ -4,14 +4,14 @@ body{
 
 @media only screen and (max-width: 800px){
   #photopea{
-    opacity: 1;
+    opacity: 0;
     display: block;
   }
 }
 
 @media only screen and (min-width: 800px){
   #photopea{
-    display: block;
+    display: none;
   }
 }
 #loadText{

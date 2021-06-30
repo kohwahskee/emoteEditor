@@ -54,7 +54,7 @@ function lurkEmote(e) {
   if (cnt == 1) { }
   if (cnt == 2) {
     console.log(cnt);
-    document.getElementById('image').src = '/assets/lurkLoading/lurkHangtight.png';
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHangtight.png';
     var loadFont1 = `app.open("${comiciLink}")`;
     var loadImage = `app.open("${lurkLink}", false)`;
     wnd.postMessage(loadFont1, '*');
@@ -62,7 +62,7 @@ function lurkEmote(e) {
   }
   if (cnt == 5) {
     console.log('printed');
-    document.getElementById('image').src = '/assets/lurkLoading/lurkHalfway.png';
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHalfway.png';
     var emoteName = urlParams.get('name');
     console.log(emoteName);
     var changeName = `var nameLayer = app.activeDocument.layers.getByName('user');nameLayer.textItem.contents = '${emoteName}'`;
@@ -70,7 +70,7 @@ function lurkEmote(e) {
 
   }
   if (cnt == 6) {
-    document.getElementById('image').src = '/assets/lurkLoading/lurkAlmost.png';
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkAlmost.png';
     var save = `app.activeDocument.saveToOE("png")`;
     wnd.postMessage(save, "*");
     window.addEventListener('message', event => {
@@ -114,6 +114,7 @@ function signEmote(e) {
 
   if (cnt == 1) { }
   if (cnt == 2) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHangtight.png';
     var loadFont1 = `app.open("${comicLink}")`
     var loadImage = `app.open("${signLink}", false)`;
     wnd.postMessage(loadFont1, '*');
@@ -121,6 +122,7 @@ function signEmote(e) {
   }
   if (cnt == 5) {
     console.log('printed');
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHalfway.png';
     var emoteName = urlParams.get('name');
     console.log(emoteName);
     var changeName = `var reText = '${emoteName}';var tLayer = app.activeDocument.layers.getByName('TEXT_HERE');var tLength = reText.length;if (tLength <= 4){tLayer.textItem.size = 65;tLayer.textItem.contents = reText;}else if (tLength <= 7){tLayer.textItem.size = 40;tLayer.textItem.contents = reText;}else
@@ -129,6 +131,7 @@ function signEmote(e) {
 
   }
   if (cnt == 6) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkAlmost.png';
     var save = `app.activeDocument.saveToOE("png")`;
     wnd.postMessage(save, "*");
     window.addEventListener('message', event => {
@@ -171,6 +174,7 @@ function signAEmote(e) {
 
   if (cnt == 1) { }
   if (cnt == 2) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHangtight.png';
     var loadFont1 = `app.open("${comicLink}")`
     var loadImage = `app.open("${signALink}", false)`;
     wnd.postMessage(loadFont1, '*');
@@ -178,6 +182,7 @@ function signAEmote(e) {
   }
   if (cnt == 5) {
     console.log('printed');
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHalfway.png';
     var emoteName = urlParams.get('name');
     console.log(emoteName);
     var changeName = `var reText = '${emoteName}'; var tLength = reText.length; for (var x = 1; x <= 7; x++) { var group = app.activeDocument.layerSets.getByName('_a_holdSign' + x); var tLayer = group.layers.getByName('TEXT_HERE'); if (tLength <= 4) {
@@ -187,6 +192,7 @@ function signAEmote(e) {
 
   }
   if (cnt == 6) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkAlmost.png';
     var save = `app.activeDocument.saveToOE("gif")`;
     wnd.postMessage(save, "*");
     window.addEventListener('message', event => {
@@ -230,6 +236,7 @@ function clapEmote(e) {
 
   if (cnt == 1) { }
   if (cnt == 2) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHangtight.png';
     var loadFont1 = `app.open("${comicbLink}")`
     var loadImage = `app.open("${clapSign}", false)`;
     wnd.postMessage(loadFont1, '*');
@@ -237,6 +244,7 @@ function clapEmote(e) {
   }
   if (cnt == 5) {
     console.log('printed');
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHalfway.png';
     var emoteName = urlParams.get('name');
     console.log(emoteName);
     var changeName = `var reText = '${emoteName}';var tLength = reText.length;var group1 = app.activeDocument.layerSets.getByName('_a_p1,150');var group2 = app.activeDocument.layerSets.getByName('_a_p2,150');var layer1 = group1.layers.getByName('TEXT_HERE');var layer2 = group2.layers.getByName('TEXT_HERE');if (tLength <= 5) {layer1.textItem.contents = reText;layer1.textItem.size = 31;layer2.textItem.contents = reText;layer2.textItem.size = 31;}else if (tLength <= 7) {layer1.textItem.contents = reText;layer1.textItem.size = 22;layer2.textItem.contents = reText;layer2.textItem.size = 22;}else{layer1.textItem.contents = reText;layer1.textItem.size = 17;layer2.textItem.contents = reText;layer2.textItem.size = 17;}`;
@@ -244,6 +252,7 @@ function clapEmote(e) {
 
   }
   if (cnt == 6) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkAlmost.png';
     var save = `app.activeDocument.saveToOE("gif")`;
     wnd.postMessage(save, "*");
     window.addEventListener('message', event => {
@@ -286,6 +295,7 @@ function hazmatEmote(e) {
 
   if (cnt == 1) { }
   if (cnt == 2) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHangtight.png';
     var emoteName = urlParams.get('name');
     var loadImage = `app.open("${hazmatLink}", false)`;
     var loadEmote = `var emoteID = '${emoteName}';app.open('https://cdn.discordapp.com/emojis/' + emoteID);`
@@ -294,6 +304,7 @@ function hazmatEmote(e) {
   }
   if (cnt == 6) {
     console.log('printed');
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHalfway.png';
     var emoteName = urlParams.get('name');
     console.log(emoteName);
     var changeName = `var emoteID = '${emoteName}';app.activeDocument.resizeImage(112,112);var targetDoc = app.documents.getByName('pepeHazmat.psd');if (app.activeDocument.layerSets[0] != undefined){var target = app.activeDocument.layerSets[0];target.duplicate(targetDoc);app.activeDocument = app.documents.getByName('pepeHazmat.psd');var duppedObj = app.activeDocument.layerSets[2];duppedObj.resize(90,90,AnchorPosition.TOPRIGHT);var target = duppedObj;var group =  app.activeDocument.layerSets.getByName('PLACE');target.move(group);}else{var target = app.activeDocument.layers[0];target.duplicate(targetDoc);app.activeDocument = app.documents.getByName('pepeHazmat.psd');var duppedObj = app.activeDocument.layerSets[0].layers[0];duppedObj.resize(90,90,AnchorPosition.TOPRIGHT);var target = duppedObj;var group =  app.activeDocument.layerSets.getByName('PLACE');target.move(group);}`;
@@ -301,6 +312,7 @@ function hazmatEmote(e) {
 
   }
   if (cnt == 7) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkAlmost.png';
     var save = `if (app.activeDocument.layerSets.getByName('PLACE').layers.getByName('Layer 1')){app.activeDocument.saveToOE("png");}else{app.activeDocument.saveToOE("gif");}`;
     wnd.postMessage(save, "*");
     window.addEventListener('message', event => {
@@ -342,10 +354,12 @@ function petEmote(e) {
 
   if (cnt == 1) { }
   if (cnt == 2) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHangtight.png';
     var loadImage = `app.open("${PETlink}", false)`;
     wnd.postMessage(loadImage, "*");
   }
   if (cnt == 4) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHalfway.png';
     var emoteName = urlParams.get('name');
     var openSmart = `var emotePlace = app.activeDocument.layers.getByName('[Emote Here]');app.activeDocument.activeLayer = emotePlace;executeAction(stringIDToTypeID("placedLayerEditContents"));var emoteID = '${emoteName}';app.open('https://cdn.discordapp.com/emojis/' + emoteID);app.activeDocument = app.documents.getByName('${emoteName}.psd');`
     wnd.postMessage(openSmart, "*");
@@ -355,6 +369,7 @@ function petEmote(e) {
 
   }
   if (cnt == 6) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkAlmost.png';
     var emoteName = urlParams.get('name');
     var save = `app.activeDocument.resizeImage(94, 94);var targetDoc = app.documents.getByName('Layer 11.psd');var target = app.activeDocument.layers[0];target.duplicate(targetDoc);app.activeDocument.close();app.activeDocument.save();app.activeDocument.close();app.activeDocument.saveToOE("gif");`;
     wnd.postMessage(save, "*");
@@ -397,6 +412,7 @@ function pepegaSignEmote(e) {
 
   if (cnt == 1) { }
   if (cnt == 2) {
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHangtight.png';
     var loadFont1 = `app.open("${comicLink}")`
     var loadImage = `app.open("${pepegaSignLink}", false)`;
     wnd.postMessage(loadFont1, '*');
@@ -404,6 +420,7 @@ function pepegaSignEmote(e) {
   }
   if (cnt == 5) {
     console.log('printed');
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkHalfway.png';
     var emoteName = urlParams.get('name');
     console.log(emoteName);
     var openObj = `var target = app.activeDocument.layerSets[2].layers.getByName("TEXT"); app.activeDocument.activeLayer = target; executeAction(stringIDToTypeID("placedLayerEditContents"));`;
@@ -412,6 +429,7 @@ function pepegaSignEmote(e) {
   }
   if (cnt == 7){
     console.log('printed');
+    document.getElementById('image').src = 'https://kohwahskee.github.io/emoteEditor/assets/lurkLoading/lurkAlmost.png';
     var emoteName = urlParams.get('name').replaceAll('"', '\\"');
 
     var changeText = `var reText = "${emoteName}"; app.activeDocument.layers[0].textItem.contents = reText; app.activeDocument.save(); app.activeDocument.close();`;
