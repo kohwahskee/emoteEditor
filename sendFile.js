@@ -1,4 +1,4 @@
-var cnt = 0, wnd = document.getElementById("photopea").contentWindow;
+var cnt = 1, wnd = document.getElementById("photopea").contentWindow;
 const urlParams = new URLSearchParams(window.location.search);
 /* const signLink = document.getElementById('sign');
 const signALink = document.getElementById('signA');
@@ -54,6 +54,7 @@ function lurkEmote(e) {
   if (cnt == 1) { }
   if (cnt == 2) {
     console.log(cnt);
+    document.getElementById('image').src = '/assets/lurkLoading/lurkHangtight.png';
     var loadFont1 = `app.open("${comiciLink}")`;
     var loadImage = `app.open("${lurkLink}", false)`;
     wnd.postMessage(loadFont1, '*');
@@ -61,6 +62,7 @@ function lurkEmote(e) {
   }
   if (cnt == 5) {
     console.log('printed');
+    document.getElementById('image').src = '/assets/lurkLoading/lurkHalfway.png';
     var emoteName = urlParams.get('name');
     console.log(emoteName);
     var changeName = `var nameLayer = app.activeDocument.layers.getByName('user');nameLayer.textItem.contents = '${emoteName}'`;
@@ -68,6 +70,7 @@ function lurkEmote(e) {
 
   }
   if (cnt == 6) {
+    document.getElementById('image').src = '/assets/lurkLoading/lurkAlmost.png';
     var save = `app.activeDocument.saveToOE("png")`;
     wnd.postMessage(save, "*");
     window.addEventListener('message', event => {

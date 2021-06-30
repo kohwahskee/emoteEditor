@@ -4,14 +4,14 @@ body{
 
 @media only screen and (max-width: 800px){
   #photopea{
-    opacity: 0;
+    opacity: 1;
     display: block;
   }
 }
 
 @media only screen and (min-width: 800px){
   #photopea{
-    display: none;
+    display: block;
   }
 }
 #loadText{
@@ -53,7 +53,6 @@ a:link{
   border-right: none;
   padding-bottom: 10px;
   border-color: #eaff4f;
-  animation: scaleUp .2s ease forwards;
 }
 
 .afterLoaded:hover{
@@ -63,7 +62,6 @@ a:link{
   border-right: none;
   padding-bottom: 10px;
   border-color: #53f4ff;
-  animation: scaleUp .2s ease forwards;
 }
 a:hover #download {
   animation: moveDown .2s ease forwards;
